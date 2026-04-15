@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}Мой профиль{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-4 mb-4">
+        <div class="card shadow-sm text-center">
+            <div class="card-body p-4">
+                {% if profile.avatar %}
+                <img src="{{ profile.avatar.url }}" class="rounded-circle mb-3"
+                     style="width:100px;height:100px;object-fit:cover;" alt="Аватар">
+                {% else %}
+                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                     style="width:100px;height:100px;font-size:2.5rem;">
+                    {{ user.username|first|upper }}
+                </div>
+                {% endif %}
+                <h4>{{ user.get_full_name|default:user.username }}</h4>
+                <p class="text-muted">@{{ user.username }}</p>
+                {% if profile.city %}
+                <p class="text-muted"><i class="bi bi-geo-alt me-1"></i>{{ profile.city }}</p>
+                {% endif %}
+                {% if profile.phone %}
+                <p class="text-muted"><i class="bi bi-telephone me-1"></i>{{ profile.phone }}</p>
+                {% endif %}
+                {% if profile.bio %}
+                <p class="small">{{ profile.bio }}</p>
+                {% endif %}
+                <hr>
+                <div class="row text-center">
+                    <div class="col">
+                        <h5>{{ profile.get_ads_count }}</h5>
+                        <small class="text-muted">Объявлений</small>
+                    </div>
+                    <div class="col">
+                        <h5>{{ user.favorites.count }}</h5>
+                        <small class="text-muted">Избранных</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="bi bi-gear me-2"></i>Редактировать профиль</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h6 class="text-muted mb-3">Личные данные</h6>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Имя</label>
+                            {{ user_form.first_name }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Фамилия</label>
+                            {{ user_form.last_name }}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        {{ user_form.email }}
+                    </div>
+                    <hr>
+                    <h6 class="text-muted mb-3">Дополнительно</h6>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Телефон</label>
+                            {{ profile_form.phone }}
+                            {% if profile_form.phone.errors %}
+                            <div class="text-danger small">{{ profile_form.phone.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Город</label>
+                            {{ profile_form.city }}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">О себе</label>
+                        {{ profile_form.bio }}
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Аватар</label>
+                        {{ profile_form.avatar }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-circle me-2"></i>Сохранить
+                    </button>
+                    <a href="{% url 'ads:my_ads' %}" class="btn btn-outline-secondary ms-2">
+                        Мои объявления
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

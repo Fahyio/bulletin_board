@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Объявления {{ author.username }}{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+            <div class="card-body">
+                {% if profile.avatar %}
+                <img src="{{ profile.avatar.url }}" class="rounded-circle mb-3"
+                     style="width:80px;height:80px;object-fit:cover;" alt="">
+                {% else %}
+                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                     style="width:80px;height:80px;font-size:2rem;">
+                    {{ author.username|first|upper }}
+                </div>
+                {% endif %}
+                <h5>{{ author.get_full_name|default:author.username }}</h5>
+                <p class="text-muted small">@{{ author.username }}</p>
+                {% if profile.city %}
+                <p class="text-muted small"><i class="bi bi-geo-alt me-1"></i>{{ profile.city }}</p>
+                {% endif %}
+                <p class="text-muted small">Объявлений: <strong>{{ ads.count }}</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <h4>Объявления пользователя {{ author.username }}</h4>
+        <hr>
+        {% if ads %}
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for ad in ads %}
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    {% if ad.image %}
+                    <img src="{{ ad.image.url }}" class="card-img-top" style="height:140px;object-fit:cover;" alt="">
+                    {% endif %}
+                    <div class="card-body">
+                        <h6><a href="{{ ad.get_absolute_url }}" class="text-decoration-none">{{ ad.title }}</a></h6>
+                        <p class="text-primary fw-bold">{{ ad.price }} ₽</p>
+                        <small class="text-muted">{{ ad.created_at|date:"d.m.Y" }}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-inbox text-muted" style="font-size:3rem;"></i>
+            <p class="mt-3 text-muted">Нет активных объявлений</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
