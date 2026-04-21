@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Избранное{% endblock %}
+{% block content %}
+<h2><i class="bi bi-heart-fill text-danger me-2"></i>Избранное</h2>
+<hr>
+{% if favorites %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for fav in favorites %}
+    <div class="col">
+        <div class="card h-100 shadow-sm">
+            {% if fav.ad.image %}
+            <img src="{{ fav.ad.image.url }}" class="card-img-top" style="height:160px;object-fit:cover;" alt="">
+            {% endif %}
+            <div class="card-body">
+                <h6><a href="{{ fav.ad.get_absolute_url }}" class="text-decoration-none">{{ fav.ad.title }}</a></h6>
+                <p class="text-primary fw-bold">{{ fav.ad.price }} ₽</p>
+                <small class="text-muted">Добавлено: {{ fav.created_at|date:"d.m.Y" }}</small>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'ads:toggle_favorite' fav.ad.pk %}" class="btn btn-sm btn-outline-danger w-100">
+                    <i class="bi bi-heart-fill me-1"></i>Убрать из избранного
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5">
+    <i class="bi bi-heart text-muted" style="font-size:4rem;"></i>
+    <h4 class="mt-3 text-muted">Избранных объявлений нет</h4>
+    <a href="{% url 'ads:index' %}" class="btn btn-primary mt-3">Перейти к объявлениям</a>
+</div>
+{% endif %}
+{% endblock %}
