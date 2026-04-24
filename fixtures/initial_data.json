@@ -1,0 +1,89 @@
+[
+  {
+    "model": "ads.category",
+    "pk": 1,
+    "fields": {
+      "name": "Электроника",
+      "slug": "electronics",
+      "type": "sale",
+      "description": "Телефоны, ноутбуки, планшеты и другая техника",
+      "icon": "bi-phone"
+    }
+  },
+  {
+    "model": "ads.category",
+    "pk": 2,
+    "fields": {
+      "name": "Одежда и обувь",
+      "slug": "clothing",
+      "type": "sale",
+      "description": "Одежда, обувь и аксессуары",
+      "icon": "bi-bag"
+    }
+  },
+  {
+    "model": "ads.category",
+    "pk": 3,
+    "fields": {
+      "name": "Мебель",
+      "slug": "furniture",
+      "type": "sale",
+      "description": "Мебель для дома и офиса",
+      "icon": "bi-house"
+    }
+  },
+  {
+    "model": "ads.category",
+    "pk": 4,
+    "fields": {
+      "name": "Ищу электронику",
+      "slug": "buy-electronics",
+      "type": "buy",
+      "description": "Куплю технику и электронику",
+      "icon": "bi-laptop"
+    }
+  },
+  {
+    "model": "ads.category",
+    "pk": 5,
+    "fields": {
+      "name": "Ищу мебель",
+      "slug": "buy-furniture",
+      "type": "buy",
+      "description": "Куплю мебель б/у",
+      "icon": "bi-cart"
+    }
+  },
+  {
+    "model": "ads.tag",
+    "pk": 1,
+    "fields": {
+      "name": "б/у",
+      "slug": "used"
+    }
+  },
+  {
+    "model": "ads.tag",
+    "pk": 2,
+    "fields": {
+      "name": "новый",
+      "slug": "new"
+    }
+  },
+  {
+    "model": "ads.tag",
+    "pk": 3,
+    "fields": {
+      "name": "срочно",
+      "slug": "urgent"
+    }
+  },
+  {
+    "model": "ads.tag",
+    "pk": 4,
+    "fields": {
+      "name": "торг",
+      "slug": "negotiable"
+    }
+  }
+]
