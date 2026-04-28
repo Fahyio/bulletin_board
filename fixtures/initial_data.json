@@ -55,6 +55,39 @@
     }
   },
   {
+    "model": "ads.category",
+    "pk": 6,
+    "fields": {
+      "name": "Авто",
+      "slug": "auto",
+      "type": "sale",
+      "description": "Продажа автомобилей и мотоциклов",
+      "icon": "bi-car-front"
+    }
+  },
+  {
+    "model": "ads.category",
+    "pk": 7,
+    "fields": {
+      "name": "Недвижимость",
+      "slug": "realty",
+      "type": "sale",
+      "description": "Продажа квартир, домов и участков",
+      "icon": "bi-building"
+    }
+  },
+  {
+    "model": "ads.category",
+    "pk": 8,
+    "fields": {
+      "name": "Ищу авто",
+      "slug": "buy-auto",
+      "type": "buy",
+      "description": "Куплю автомобиль или мотоцикл",
+      "icon": "bi-car-front-fill"
+    }
+  },
+  {
     "model": "ads.tag",
     "pk": 1,
     "fields": {
@@ -84,6 +117,22 @@
     "fields": {
       "name": "торг",
       "slug": "negotiable"
+    }
+  },
+  {
+    "model": "ads.tag",
+    "pk": 5,
+    "fields": {
+      "name": "доставка",
+      "slug": "delivery"
+    }
+  },
+  {
+    "model": "ads.tag",
+    "pk": 6,
+    "fields": {
+      "name": "обмен",
+      "slug": "exchange"
     }
   }
 ]
