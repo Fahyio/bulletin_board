@@ -162,3 +162,7 @@ python manage.py test ads
 - CRUD объявлений, поиск, фильтрация
 - Все шаблоны + Bootstrap
 - Тесты: ads/tests.py
+
+## Авторы
+- [fahyio](https://github.com/Fahyio) — настройка проекта, backend, авторизация, Django Admin, тесты
+- [kfpvq52f7s-hash](https://github.com/kfpvq52f7s-hash) — категории, теги, стили, шаблоны ошибок
