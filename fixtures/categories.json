@@ -1,0 +1,8 @@
+[
+  {"model": "ads.category", "pk": 1, "fields": {"name": "Электроника", "ad_type": "sell"}},
+  {"model": "ads.category", "pk": 2, "fields": {"name": "Одежда", "ad_type": "sell"}},
+  {"model": "ads.category", "pk": 3, "fields": {"name": "Недвижимость", "ad_type": "sell"}},
+  {"model": "ads.category", "pk": 4, "fields": {"name": "Транспорт", "ad_type": "sell"}},
+  {"model": "ads.category", "pk": 5, "fields": {"name": "Электроника", "ad_type": "buy"}},
+  {"model": "ads.category", "pk": 6, "fields": {"name": "Одежда", "ad_type": "buy"}}
+]
