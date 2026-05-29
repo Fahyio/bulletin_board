@@ -1,8 +1,8 @@
 [
-  {"model": "ads.category", "pk": 1, "fields": {"name": "Электроника", "ad_type": "sell"}},
-  {"model": "ads.category", "pk": 2, "fields": {"name": "Одежда", "ad_type": "sell"}},
-  {"model": "ads.category", "pk": 3, "fields": {"name": "Недвижимость", "ad_type": "sell"}},
-  {"model": "ads.category", "pk": 4, "fields": {"name": "Транспорт", "ad_type": "sell"}},
-  {"model": "ads.category", "pk": 5, "fields": {"name": "Электроника", "ad_type": "buy"}},
-  {"model": "ads.category", "pk": 6, "fields": {"name": "Одежда", "ad_type": "buy"}}
+  {"model": "ads.category", "pk": 1, "fields": {"name": "Электроника", "slug": "electronics", "type": "sale", "description": "Телефоны, ноутбуки, планшеты", "icon": "bi-phone"}},
+  {"model": "ads.category", "pk": 2, "fields": {"name": "Одежда", "slug": "clothes", "type": "sale", "description": "Мужская и женская одежда", "icon": "bi-bag"}},
+  {"model": "ads.category", "pk": 3, "fields": {"name": "Недвижимость", "slug": "realty", "type": "sale", "description": "Квартиры, дома, участки", "icon": "bi-house"}},
+  {"model": "ads.category", "pk": 4, "fields": {"name": "Транспорт", "slug": "transport", "type": "sale", "description": "Автомобили, мотоциклы", "icon": "bi-car-front"}},
+  {"model": "ads.category", "pk": 5, "fields": {"name": "Электроника", "slug": "electronics-buy", "type": "buy", "description": "Ищу технику", "icon": "bi-phone"}},
+  {"model": "ads.category", "pk": 6, "fields": {"name": "Одежда", "slug": "clothes-buy", "type": "buy", "description": "Ищу одежду", "icon": "bi-bag"}}
 ]
