@@ -11,7 +11,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-change-me-in-production')
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://bulletinboard-production-0570.up.railway.app']
+CSRF_TRUSTED_ORIGINS = [
+    'https://bulletinboard-production-0570.up.railway.app',
+    'https://bulletinboard-production-3680.up.railway.app',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
